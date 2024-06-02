@@ -1,7 +1,7 @@
 package lucene.cyborg.jni.collector;
 
 public abstract class CollectorManagerData {
-    public static final int COMPLETE = 0;
+    public static final int COMPLETE_NO_SCORE = 0;
     public static final int TOP_SCORES = 1;
 
     protected CollectorManagerData(int typeId, int scoreMode) {

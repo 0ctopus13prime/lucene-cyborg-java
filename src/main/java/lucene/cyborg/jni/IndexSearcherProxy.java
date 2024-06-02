@@ -1,6 +1,5 @@
 package lucene.cyborg.jni;
 
-import lucene.cyborg.jni.aggregator.AggregatorManagerData;
 import lucene.cyborg.jni.collector.CollectorManagerData;
 import lucene.cyborg.jni.query.QueryData;
 import lucene.cyborg.jni.similarity.BM25SimilarityData;
@@ -28,16 +27,6 @@ public class IndexSearcherProxy {
     private native void search(long mmapDirectoryReaderPointer,
                                QueryData queryData,
                                CollectorManagerData collectorManagerData);
-
-    public void aggregate(QueryData queryData, AggregatorManagerData aggregatorManagerData) {
-        aggregate(staticMMapDirectoryReader.getCyborgIndexReaderPointer(),
-                queryData,
-                aggregatorManagerData);
-    }
-
-    private native void aggregate(long mmapDirectoryReaderPointer,
-                                  QueryData queryData,
-                                  AggregatorManagerData aggregatorManagerData);
 
     public void setSimilarityData(SimilarityData similarityData) {
         Objects.requireNonNull(similarityData, "similarityData");

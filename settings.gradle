@@ -1,2 +1,3 @@
 rootProject.name = 'lucene-cyborg-java'
 
+include "src.main"
